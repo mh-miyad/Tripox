@@ -1,3 +1,4 @@
+import DashBoardLayout from "@/components/Layout/Dashboard";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -15,12 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <nav>
-          <h1>Navbar</h1>
-        </nav>
-        {children}
-      </body>
+      <DashBoardLayout>{children}</DashBoardLayout>
     </html>
   );
 }
