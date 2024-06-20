@@ -22,7 +22,7 @@ const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
           <div className="hidden lg:block">
             <Menubar />
           </div>
-          <div className="flex-1 pr-5">
+          <div className="flex-1">
             <DashNavbar />
             <main className=" p-3">{children}</main>
           </div>

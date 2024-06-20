@@ -35,7 +35,7 @@ const DashNavbar = () => {
   return (
     <>
       <Sheet key={"left"}>
-        <nav className="flex items-center justify-between h-[70px] bg-white dark:bg-slate-950 px-3">
+        <nav className="flex items-center justify-between h-[70px] bg-white dark:bg-slate-900 px-5">
           <div>
             <div className="lg:hidden flex  items-center  gap-x-4">
               <SheetTrigger>
