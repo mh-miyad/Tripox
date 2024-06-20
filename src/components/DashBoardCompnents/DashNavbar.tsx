@@ -14,13 +14,20 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Dancing_Script as Inter } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { VscBell } from "react-icons/vsc";
-import logo from "../../Assets/img/logo.png";
+import logo from "../../Assets/img/logo.svg";
 import { DarkMood } from "../DarkMood/DarkMoodButton";
 import SearchBar from "../SearchBar/SearchBar";
 import DashMenu from "./DashMenu";
+const inter = Inter({
+  subsets: ["latin"],
+  style: ["normal"],
+  weight: ["400", "500", "700"],
+});
 const DashNavbar = () => {
   return (
     <>
@@ -34,13 +41,20 @@ const DashNavbar = () => {
                   <HiMiniBars3CenterLeft className="w-6 h-6" />
                 </button>
               </SheetTrigger>
-              <Image
-                src={logo}
-                alt="logo"
-                lazyBoundary="true"
-                width={150}
-                height={120}
-              />
+              <Link href={"/admin"} className="flex items-center gap-2">
+                <Image
+                  src={logo}
+                  alt="logo"
+                  lazyBoundary="true"
+                  width={40}
+                  height={30}
+                />
+                <h1
+                  className={`text-2xl font-bold ${inter.className} uppercase`}
+                >
+                  Tripox
+                </h1>
+              </Link>
             </div>
             <h2 className="text-2xl font-bold drop-shadow-sm hidden lg:block">
               Dashboard
@@ -91,13 +105,20 @@ const DashNavbar = () => {
           <SheetContent side={"left"}>
             <SheetHeader>
               <SheetTitle>
-                <Image
-                  src={logo}
-                  alt="logo"
-                  lazyBoundary="true"
-                  width={150}
-                  height={120}
-                />
+                <Link href={"/admin"} className="flex items-center gap-2">
+                  <Image
+                    src={logo}
+                    alt="logo"
+                    lazyBoundary="true"
+                    width={60}
+                    height={30}
+                  />
+                  <h1
+                    className={`text-4xl font-bold ${inter.className} uppercase`}
+                  >
+                    Tripox
+                  </h1>
+                </Link>
               </SheetTitle>
               {/* <SheetDescription>
                

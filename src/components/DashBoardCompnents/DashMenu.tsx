@@ -61,8 +61,10 @@ const DashMenu = () => {
             <li key={link.path}>
               <Link
                 href={link.path}
-                className={`text-base flex items-center justify-start gap-x-8 border py-2.5 px-3 rounded-md  ${
-                  pathname === link?.path ? `bg-indigo-400 text-white` : ""
+                className={`text-base flex items-center justify-start gap-x-8  py-2.5 px-3 rounded-md hover:bg-indigo-400 hover:text-white transition-all ease-linear duration-150 ${
+                  pathname === link?.path
+                    ? `bg-indigo-400 text-white border-indigo-500 border-2`
+                    : ""
                 } `}
               >
                 <span>{link.icon}</span>

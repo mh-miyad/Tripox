@@ -12,9 +12,9 @@ const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
         disableTransitionOnChange
       >
         <div className="md:flex h-screen items-start ">
-          <aside className="hidden lg:block">
+          <div className="hidden lg:block">
             <Menubar />
-          </aside>
+          </div>
           <div className="flex-1 pr-5">
             <DashNavbar />
             <main className=" p-3">{children}</main>
