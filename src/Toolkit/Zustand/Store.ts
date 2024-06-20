@@ -1,11 +1,21 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
-import { createUserSlice, UserState } from "./state/userSlice";
 
-const useStore = create<UserState>()(
-  devtools((set, get, api) => ({
-    ...createUserSlice(set, get, api),
-  }))
-);
+// Define the Menu interface
+interface Menu {
+  name: string;
+  setName: (name: string) => void;
+}
+
+// Create the menu slice
+const createMenuSlice = (set: any): Menu => ({
+  name: "Dashboard",
+  setName: (name: string) => set({ name }),
+});
+
+// Create the store with just the menu slice
+const useStore = create<Menu>((set) => ({
+  ...createMenuSlice(set),
+}));
 
 export default useStore;
+export type { Menu };

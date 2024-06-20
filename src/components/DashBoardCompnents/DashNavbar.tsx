@@ -1,3 +1,4 @@
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -14,6 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import useStore from "@/Toolkit/Zustand/Store";
 import { Dancing_Script as Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,6 +31,7 @@ const inter = Inter({
   weight: ["400", "500", "700"],
 });
 const DashNavbar = () => {
+  const { name } = useStore();
   return (
     <>
       <Sheet key={"left"}>
@@ -57,7 +60,7 @@ const DashNavbar = () => {
               </Link>
             </div>
             <h2 className="text-2xl font-bold drop-shadow-sm hidden lg:block">
-              Dashboard
+              {name || "Dashboard"}
             </h2>
           </div>
           <div className="hidden sm:block">

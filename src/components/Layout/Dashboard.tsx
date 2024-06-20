@@ -1,10 +1,17 @@
 import { ThemeProvider } from "@/Theme/theme-provider";
+import { Poppins as Inter } from "next/font/google";
 import DashNavbar from "../DashBoardCompnents/DashNavbar";
 import Menubar from "../DashBoardCompnents/Menubar";
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <body className="bg-gray-300/10 dark:bg-slate-950">
+    <body
+      className={`bg-gray-300/10 dark:bg-slate-950 ${inter.className} font-normal `}
+    >
       <ThemeProvider
         attribute="class"
         defaultTheme="system"

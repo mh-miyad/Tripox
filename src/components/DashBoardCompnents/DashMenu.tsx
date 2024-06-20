@@ -1,4 +1,5 @@
 "use client";
+import useStore from "@/Toolkit/Zustand/Store";
 import { Poppins as Inter } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,8 +15,8 @@ const inter = Inter({
   weight: ["100", "300", "400", "500", "900", "700"],
 });
 const DashMenu = () => {
+  const { setName } = useStore();
   const pathname = usePathname();
-  console.log(pathname);
   const dashboardLink = [
     {
       base: "Dashboard",
@@ -58,7 +59,7 @@ const DashMenu = () => {
       <div className={`mt-5 ${inter.className}`}>
         <ul className="flex flex-col gap-4 ">
           {dashboardLink.map((link) => (
-            <li key={link.path}>
+            <li key={link.path} onClick={() => setName(link.base)}>
               <Link
                 href={link.path}
                 className={`text-base flex items-center justify-start gap-x-8  py-2.5 px-3 rounded-md hover:bg-indigo-400 hover:text-white transition-all ease-linear duration-150 ${
