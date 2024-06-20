@@ -24,13 +24,13 @@ const SearchBar = () => {
       <Dialog>
         <div className="">
           <DialogTrigger asChild>
-            <div className="sm:w-32 md:w-[190px] h-10 sm:border flex items-center px-2 cursor-pointer ">
+            <div className="sm:w-[190px] lg:w-96 h-10 sm:border flex items-center px-2 cursor-pointer ">
               <HiMagnifyingGlass className="w-5 h-5 text-gray-900 dark:text-white" />
             </div>
           </DialogTrigger>
         </div>
-        <div>
-          <DialogContent className="w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-70rem)]">
+        <div className="w-full ">
+          <DialogContent className="w-full sm:max-w-[calc(100vw-70rem)]">
             <DialogHeader>
               <DialogTitle>Search </DialogTitle>
             </DialogHeader>
