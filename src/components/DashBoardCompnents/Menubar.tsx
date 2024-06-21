@@ -1,4 +1,3 @@
-import { Dancing_Script as Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGift } from "react-icons/fa";
@@ -6,26 +5,20 @@ import { IoIosLogOut } from "react-icons/io";
 import { TbHeadset } from "react-icons/tb";
 import logo from "../../Assets/img/logo.svg";
 import DashMenu from "./DashMenu";
-const inter = Inter({
-  subsets: ["latin"],
-  style: ["normal"],
-  weight: ["400", "500", "700"],
-});
+
 const Menubar = () => {
   return (
     <aside className="lg:w-[18rem] h-screen bg-white dark:bg-slate-900 md:block">
-      <div className="w-full pt-3 flex justify-center">
+      <div className="w-full pt-6 flex justify-center">
         <Link href={"/dashboard"} className="flex items-center gap-2  ">
           <Image
             src={logo}
             alt="logo"
             lazyBoundary="true"
-            width={60}
-            height={60}
+            width={40}
+            height={40}
           />
-          <h1 className={`text-4xl font-bold ${inter.className} uppercase`}>
-            Tripox
-          </h1>
+          <h1 className={`text-3xl font-light uppercase`}>Tripox</h1>
         </Link>
       </div>
       {/* Main link of the menubar */}

@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardDescription,
@@ -12,8 +13,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn, getColorClasses } from "@/lib/utils";
+import CountUp from "react-countup";
 import { TfiPieChart } from "react-icons/tfi";
-
 const DashTopic = ({
   topic,
   name,
@@ -28,14 +29,14 @@ const DashTopic = ({
   name: string;
   icon: React.ReactNode;
   color: string;
-  amount: string;
+  amount: number;
   ratePoint: string;
-  hope: string;
+  hope: number;
   rate: string;
 }) => {
   return (
     <div>
-      <Card className={cn("w-full max-w-lg mx-auto group", "h-[200px]")}>
+      <Card className={cn("w-full max-w-lg mx-auto group", "h-[240px]")}>
         <CardHeader>
           <CardTitle>
             <div className="flex items-center gap-3 justify-between">
@@ -52,7 +53,7 @@ const DashTopic = ({
                 <SelectTrigger className="w-fit min-w-[120px] focus:ring-0 focus-within:ring-0 ">
                   <SelectValue placeholder="This Week" />
                 </SelectTrigger>
-                <SelectContent color="indigo">
+                <SelectContent className="text-gray-400">
                   <SelectItem value="week">This Week</SelectItem>
                   <SelectItem value="month">This Month</SelectItem>
                   <SelectItem value="year">This Year</SelectItem>
@@ -62,7 +63,7 @@ const DashTopic = ({
             <span className="text-base font-light tracking-wide">{name}</span>
           </CardTitle>
           <CardDescription>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mt-5">
               <p
                 className={`text-xl font-bold ${
                   color ? `text-${color}-400` : "text-blue-400"
@@ -73,13 +74,16 @@ const DashTopic = ({
               </p>
               <p>
                 <span
-                  className={`text-3xl font-bold ${
+                  className={`text-2xl md:text-3xl font-bold drop-shadow-md  ${
                     color ? `text-${color}-400` : "text-blue-500"
                   }`}
                 >
-                  $ {amount}
+                  {/* $ {amount} */}
+                  $ <CountUp end={amount} duration={1} />
                 </span>
-                <span>/ {hope}</span>
+                <span className=" text-sm md:text-base font-medium drop-shadow-sm">
+                  / {hope}
+                </span>
               </p>
             </div>
             <div className="flex items-center gap-3 justify-between">
@@ -88,8 +92,8 @@ const DashTopic = ({
                 Increase Rate <br />
               </p>
               <p
-                className={` font-medium mt-2 block ${
-                  ratePoint === "neg" ? `text-red-400` : "text-green-400"
+                className={` font-medium mt-2 block drop-shadow-md ${
+                  ratePoint === "neg" ? `text-red-500` : "text-green-400"
                 }`}
               >
                 {rate}

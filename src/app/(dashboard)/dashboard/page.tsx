@@ -9,8 +9,8 @@ const Dashboard = () => {
       name: "Sales",
       icon: <IoBagHandleOutline />,
       color: "blue",
-      amount: "238,000",
-      hope: "32,0000",
+      amount: 238000,
+      hope: 320000,
       rate: "+7.45%",
       ratePoint: "pos",
       topic: "Total Sales",
@@ -20,19 +20,19 @@ const Dashboard = () => {
       name: "Orders",
       icon: <RiLuggageCartLine />,
       color: "green",
-      amount: "9,000",
-      hope: "15,000",
+      amount: 9000,
+      hope: 15000,
       rate: "+39.69%",
       ratePoint: "pos",
       topic: "Total Order",
     },
     {
-      id: 2,
+      id: 3,
       name: "Marketing",
       icon: <RiAdvertisementLine />,
       color: "red",
-      amount: "3,589",
-      hope: "1,000",
+      amount: 3589,
+      hope: 1000,
       rate: "-12.82%",
       ratePoint: "neg",
       topic: "Total Order",
@@ -42,7 +42,7 @@ const Dashboard = () => {
     <div>
       <section>
         {/* Top section start here  */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
           {data.map((item) => (
             <DashTopic
               key={item.id}

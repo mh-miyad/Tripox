@@ -56,15 +56,15 @@ const DashMenu = () => {
   ];
   return (
     <>
-      <div className={`mt-5 ${inter.className}`}>
-        <ul className="flex flex-col gap-4 ">
+      <div className={`mt-8 ${inter.className}`}>
+        <ul className="flex flex-col mx-4  gap-4 ">
           {dashboardLink.map((link) => (
             <li key={link.path} onClick={() => setName(link.base)}>
               <Link
                 href={link.path}
-                className={`text-base flex items-center justify-start gap-x-8  py-2.5 px-3 rounded-md hover:bg-indigo-400 hover:text-white transition-all ease-linear duration-150 ${
+                className={`text-base flex items-center justify-start gap-3   py-2 px-3 rounded-md hover:bg-indigo-400 hover:text-white transition-all ease-linear duration-150 ${
                   pathname === link?.path
-                    ? `bg-indigo-400 text-white border-indigo-500 border-2`
+                    ? `bg-indigo-500 text-white border-indigo-500 border-2`
                     : ""
                 } `}
               >

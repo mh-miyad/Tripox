@@ -24,7 +24,7 @@ const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
           <div className="flex-1">
             <DashNavbar />
-            <main className=" p-3">{children}</main>
+            <main className="p-3 xl:p-6">{children}</main>
           </div>
         </div>
       </ThemeProvider>
