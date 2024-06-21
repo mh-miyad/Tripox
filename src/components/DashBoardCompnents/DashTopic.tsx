@@ -36,7 +36,7 @@ const DashTopic = ({
 }) => {
   return (
     <div>
-      <Card className={cn("w-full max-w-lg mx-auto group", "h-[240px]")}>
+      <Card className={cn("w-full max-w-lg  group", "h-[240px]")}>
         <CardHeader>
           <CardTitle>
             <div className="flex items-center gap-3 justify-between">

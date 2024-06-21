@@ -1,5 +1,6 @@
 import PieChart from "@/components/Chart/PieChart";
 import DashTopic from "@/components/DashBoardCompnents/DashTopic";
+import OrderCard from "@/components/DashBoardCompnents/OrderCard";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { RiAdvertisementLine, RiLuggageCartLine } from "react-icons/ri";
 const Dashboard = () => {
@@ -56,10 +57,21 @@ const Dashboard = () => {
               ratePoint={item.ratePoint}
             />
           ))}
+          <div className=" xl:hidden">
+            <OrderCard />
+          </div>
         </div>
         {/* Top section end  here  */}
-        <div className="flex flex-wrap items-center gap-5 ">
+      </section>
+      <section className="my-6  flex  items-start gap-5">
+        <div className=" md:grid grid-cols-1 gap-5 md:grid-cols-2 ">
           <PieChart />
+
+          <PieChart />
+        </div>
+        <div className="hidden xl:block flex-1">
+          <OrderCard />
+          <OrderCard />
         </div>
       </section>
     </div>
