@@ -1,28 +1,29 @@
 "use client";
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: ["Acquisition", "Purchase", "Retention"],
 
   datasets: [
     {
-      label: "# of Votes",
-      data: [113, 143, 233, 125, 232, 321],
+      label: "Cost Of Sales",
+      data: [11, 56, 33],
       backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
         "rgba(75, 192, 192, 0.2)",
         "rgba(153, 102, 255, 0.2)",
         "rgba(255, 159, 64, 0.2)",
       ],
       borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
         "rgba(75, 192, 192, 1)",
         "rgba(153, 102, 255, 1)",
         "rgba(255, 159, 64, 1)",
@@ -35,8 +36,8 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: "right" as const,
-      display: false,
+      position: "top" as const,
+      display: true,
     },
     title: {
       display: false,
@@ -46,8 +47,30 @@ export const options = {
 };
 const PieChart = () => {
   return (
-    <div className="w-full max-w-fit bg-white dark:bg-slate-950 dark:backdrop-blur-md border rounded-sm p-4 my-4 max-h-[300px]">
-      <Pie data={data} options={options} />
+    <div className="w-full  md:max-w-fit bg-white dark:bg-slate-950 dark:backdrop-blur-md border rounded-sm py-7 px-5 my-4 ">
+      {/* <Pie data={data} options={options} /> */}
+      <div className="flex items-center justify-between gap-5 mb-5  ">
+        <h2 className="text-2xl font-medium  tracking-wide capitalize">
+          {" "}
+          Total Order Cost{" "}
+        </h2>
+        <div>
+          <Select>
+            <SelectTrigger className="w-fit min-w-[120px] focus:ring-0 focus-within:ring-0 ">
+              <SelectValue placeholder="This Week" />
+            </SelectTrigger>
+            <SelectContent color="indigo">
+              <SelectItem value="week">This Week</SelectItem>
+              <SelectItem value="month">This Month</SelectItem>
+              <SelectItem value="year">This Year</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      <div className="max-w-sm">
+        <Doughnut data={data} options={options} />
+      </div>
     </div>
   );
 };

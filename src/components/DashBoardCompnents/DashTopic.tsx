@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cn } from "@/lib/utils";
+import { cn, getColorClasses } from "@/lib/utils";
 import { TfiPieChart } from "react-icons/tfi";
 
 const DashTopic = ({
@@ -42,7 +42,7 @@ const DashTopic = ({
               <p
                 className={`text-3xl  p-2 rounded-lg w-fit ${
                   color
-                    ? `bg-${color}-300/30 dark:bg-${color}-700/60 dark:text-${color}-300 text-${color}-800`
+                    ? `${getColorClasses(color)}`
                     : "bg-blue-300/30 dark:bg-blue-700/60 dark:text-blue-300  text-blue-800"
                 }`}
               >
