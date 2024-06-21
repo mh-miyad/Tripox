@@ -44,7 +44,7 @@ const DashNavbar = () => {
                   <HiMiniBars3CenterLeft className="w-6 h-6" />
                 </button>
               </SheetTrigger>
-              <Link href={"/admin"} className="flex items-center gap-2">
+              <Link href={"/dashboard"} className="flex items-center gap-2">
                 <Image
                   src={logo}
                   alt="logo"
@@ -108,7 +108,7 @@ const DashNavbar = () => {
           <SheetContent side={"left"}>
             <SheetHeader>
               <SheetTitle>
-                <Link href={"/admin"} className="flex items-center gap-2">
+                <Link href={"/dashboard"} className="flex items-center gap-2">
                   <Image
                     src={logo}
                     alt="logo"

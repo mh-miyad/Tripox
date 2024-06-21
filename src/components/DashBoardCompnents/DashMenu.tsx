@@ -20,7 +20,7 @@ const DashMenu = () => {
   const dashboardLink = [
     {
       base: "Dashboard",
-      path: "/admin",
+      path: "/dashboard",
       icon: <FaChartPie className={`w-6 h-6`} />,
     },
     {

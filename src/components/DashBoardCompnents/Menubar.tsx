@@ -15,7 +15,7 @@ const Menubar = () => {
   return (
     <aside className="lg:w-[18rem] h-screen bg-white dark:bg-slate-900 md:block">
       <div className="w-full pt-3 flex justify-center">
-        <Link href={"/admin"} className="flex items-center gap-2  ">
+        <Link href={"/dashboard"} className="flex items-center gap-2  ">
           <Image
             src={logo}
             alt="logo"
