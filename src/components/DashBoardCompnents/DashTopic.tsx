@@ -22,10 +22,13 @@ const DashTopic = ({
   color,
   amount,
   hope,
+  dollar,
   rate,
   ratePoint,
+  rateName,
 }: {
   topic: string;
+  dollar: string;
   name: string;
   icon: React.ReactNode;
   color: string;
@@ -33,6 +36,7 @@ const DashTopic = ({
   ratePoint: string;
   hope: number;
   rate: string;
+  rateName: string;
 }) => {
   return (
     <div>
@@ -79,7 +83,7 @@ const DashTopic = ({
                   }`}
                 >
                   {/* $ {amount} */}
-                  $ <CountUp end={amount} duration={1} />
+                  {dollar} <CountUp end={amount} duration={1} />
                 </span>
                 <span className=" text-sm md:text-base font-medium drop-shadow-sm">
                   / {hope}
@@ -87,9 +91,13 @@ const DashTopic = ({
               </p>
             </div>
             <div className="flex items-center gap-3 justify-between">
-              <p className="text-sm font-medium">
+              <p
+                className={`text-sm font-medium ${
+                  ratePoint === "neg" ? `text-red-500` : "text-green-400"
+                }`}
+              >
                 {" "}
-                Increase Rate <br />
+                {rateName} <br />
               </p>
               <p
                 className={` font-medium mt-2 block drop-shadow-md ${

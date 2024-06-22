@@ -47,7 +47,7 @@ export const options = {
 };
 const PieChart = () => {
   return (
-    <div className="w-full max-w-full min-w-lg bg-white dark:bg-slate-950 dark:backdrop-blur-md border rounded-sm py-9 px-5  ">
+    <div className="w-[100%] md:w-[355px]  bg-white dark:bg-slate-950 dark:backdrop-blur-md border rounded-sm py-9 px-5  ">
       {/* <Pie data={data} options={options} /> */}
       <div className="flex items-center justify-between gap-5 mb-5  ">
         <h2 className="text-2xl font-medium  tracking-wide capitalize">
@@ -68,7 +68,7 @@ const PieChart = () => {
         </div>
       </div>
 
-      <div className=" w-full min-w-lg max-w-lg min-h-[350px]">
+      <div className="w-full">
         <Doughnut data={data} options={options} />
       </div>
     </div>
