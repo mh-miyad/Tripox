@@ -8,7 +8,7 @@ import DashMenu from "./DashMenu";
 
 const Menubar = () => {
   return (
-    <aside className="lg:w-[18rem] h-screen bg-white dark:bg-slate-900 md:block">
+    <aside className="lg:w-[18rem]  h-[120vh] relative  md:block">
       <div className="w-full pt-6 flex justify-center">
         <Link href={"/dashboard"} className="flex items-center gap-2  ">
           <Image
@@ -29,7 +29,7 @@ const Menubar = () => {
       <div className="absolute bottom-12">
         <Link
           href={"/contact"}
-          className="mx-3 flex  border w-full px-7 py-3 rounded-lg bg-blue-900/50 text-white hover:bg-blue-700 items-center gap-3  "
+          className="mx-3 flex  border w-full px-7 py-3 rounded-lg bg-sky-500 text-white hover:bg-sky-700 items-center gap-3  "
         >
           <span>
             <TbHeadset className="w-6 h-6" />

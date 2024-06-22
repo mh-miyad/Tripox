@@ -1,4 +1,4 @@
-import LineChart from "@/components/Chart/LineChart";
+import PieChart from "@/components/Chart/PieChart";
 import DashTopic from "@/components/DashBoardCompnents/DashTopic";
 import OrderCard from "@/components/DashBoardCompnents/OrderCard";
 import OrderTable from "@/components/DashBoardCompnents/OrderTable";
@@ -87,9 +87,9 @@ const Dashboard = () => {
         {/* Top section end  here  */}
       </section>
       <section className="my-6  flex flex-col md:flex-row  items-start gap-5">
-        <div className="flex-1">
-          {/* <PieChart /> */}
-          <LineChart />
+        <div className="">
+          <PieChart />
+          {/* <LineChart /> */}
         </div>
 
         <div className=" hidden xl:block flex-1 space-y-4">

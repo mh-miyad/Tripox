@@ -18,8 +18,8 @@ const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
         enableSystem
         disableTransitionOnChange
       >
-        <div className="md:flex h-screen items-start ">
-          <div className="hidden lg:block">
+        <div className="md:flex  items-start ">
+          <div className="hidden lg:block  flex-gow-1 bg-white dark:bg-slate-900 min-h-fit">
             <Menubar />
           </div>
           <div className="flex-1">

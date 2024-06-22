@@ -12,7 +12,7 @@ export const getColorClasses = (color: string) => {
     case "sky":
       return "bg-sky-300/30 dark:bg-sky-700/60 dark:text-sky-300 text-sky-400";
     case "green":
-      return "bg-green-300/30 dark:bg-green-700/60 dark:text-green-300 text-green-800";
+      return "bg-green-300/30 dark:bg-green-700/60 dark:text-green-300 text-green-600";
     case "red":
       return "bg-red-300/30 dark:bg-red-700/60 dark:text-red-300 text-red-400";
     default:
