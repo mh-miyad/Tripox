@@ -1,97 +1,100 @@
 "use client";
-import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
-
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+import dayjs from "dayjs";
+import Chart from "react-apexcharts";
+export const data = {
+  series: [
+    {
+      name: "sales",
+      data: [
+        {
+          x: "2019/01/01",
+          y: 400,
+        },
+        {
+          x: "2019/04/01",
+          y: 430,
+        },
+        {
+          x: "2019/07/01",
+          y: 448,
+        },
+        {
+          x: "2019/10/01",
+          y: 470,
+        },
+        {
+          x: "2020/01/01",
+          y: 540,
+        },
+        {
+          x: "2020/04/01",
+          y: 580,
+        },
+        {
+          x: "2020/07/01",
+          y: 690,
+        },
+        {
+          x: "2020/10/01",
+          y: 690,
+        },
+      ],
+    },
+  ],
+  options: {
+    chart: {
+      type: "bar",
+      height: 280,
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 10,
+        barWidth: 2,
+        columnWidth: "30%",
+      },
+    },
+    xaxis: {
+      type: "category",
+      labels: {
+        formatter: function (val: { val: any }) {
+          return "Q" + dayjs(val).format("Q");
+        },
+      },
+      group: {
+        style: {
+          fontSize: "16px",
+          fontWeight: 500,
+        },
+        groups: [
+          { title: "2019", cols: 4 },
+          { title: "2020", cols: 4 },
+        ],
+      },
+    },
+    title: {
+      text: "Grouped Labels on the X-axis",
+    },
+    tooltip: {
+      x: {
+        formatter: function (val) {
+          return "Q" + dayjs(val).format() + " " + dayjs(val).format("YYYY");
+        },
+      },
+    },
   },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+};
 const LineChart = () => (
-  <div className=" bg-white dark:bg-slate-950 dark:backdrop-blur-md border rounded-sm py-12 px-5 max-w-md sm:max-w-3xl xl:max-w-2xl overflow-auto">
-    <AreaChart
-      width={500}
-      height={400}
-      data={data}
-      margin={{
-        top: 10,
-        right: 30,
-        left: 0,
-        bottom: 0,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Area
-        type="monotone"
-        dataKey="uv"
-        stackId="1"
-        stroke="#8884d8"
-        fill="#8884d8"
+  <>
+    <div className="w-full max-w-[68rem] border rounded-md shadow-lg bg-white h-full p-4  max-h-[400px] dark:bg-slate-950">
+      <Chart
+        options={data.options}
+        series={data.series}
+        type="bar"
+        width="100%"
+        height={380}
       />
-      <Area
-        type="monotone"
-        dataKey="pv"
-        stackId="1"
-        stroke="#82ca9d"
-        fill="#82ca9d"
-      />
-      <Area
-        type="monotone"
-        dataKey="amt"
-        stackId="1"
-        stroke="#ffc658"
-        fill="#ffc658"
-      />
-    </AreaChart>
-  </div>
+    </div>
+  </>
 );
 
 export default LineChart;

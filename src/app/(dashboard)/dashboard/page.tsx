@@ -1,3 +1,5 @@
+import DonutChart from "@/components/Chart/DonutChart";
+import LineChart from "@/components/Chart/LineChart";
 import PieChart from "@/components/Chart/PieChart";
 import DashTopic from "@/components/DashBoardCompnents/DashTopic";
 import OrderCard from "@/components/DashBoardCompnents/OrderCard";
@@ -87,12 +89,13 @@ const Dashboard = () => {
         {/* Top section end  here  */}
       </section>
       <section className="my-6  flex flex-col md:flex-row  items-start gap-5">
-        <div className="">
+        <div className="flex-1">
           <PieChart />
-          {/* <LineChart /> */}
+          <DonutChart />
         </div>
 
-        <div className=" hidden xl:block flex-1 space-y-4">
+        <div className=" hidden xl:block flex-1 space-y-5">
+          <OrderCard active={true} />
           <OrderCard active={true} />
           <DashTopic
             amount={3456}
@@ -110,6 +113,11 @@ const Dashboard = () => {
         </div>
         <div className="flex-1">
           <OrderTable />
+        </div>
+      </section>
+      <section className="flex flex-col md:flex-row  items-start gap-5">
+        <div className="flex-1">
+          <LineChart />
         </div>
       </section>
     </div>

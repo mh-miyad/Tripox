@@ -52,11 +52,35 @@ const invoices = [
     totalAmount: "$300.00",
     paymentMethod: "Credit Card",
   },
+  {
+    invoice: "INV007",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV007",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV007",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV007",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
 ];
 
 const OrderTable = () => {
   return (
-    <div className="border border-slate-200 rounded-lg p-2 bg-white dark:bg-slate-950 dark:border-slate-700 max-w-2xl  overflow-x-auto">
+    <div className="border min-h-[760px] w-full max-w-2xl border-slate-200 rounded-lg p-2 bg-white dark:bg-slate-950 dark:border-slate-700    overflow-x-auto">
       <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>
