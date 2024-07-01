@@ -15,7 +15,8 @@ const inter = Inter({
   weight: ["100", "300", "400", "500", "900", "700"],
 });
 const DashMenu = () => {
-  const { setName } = useStore();
+  const { setName, open } = useStore();
+  console.log(open);
   const pathname = usePathname();
   const dashboardLink = [
     {

@@ -64,18 +64,17 @@ const DashTopic = ({
                 </SelectContent>
               </Select>
             </div>
-            <span className="text-base font-light tracking-wide">{name}</span>
+            <p
+              className={`text-xl font-bold mt-3 ${
+                color ? `text-${color}-400` : "text-blue-400"
+              } `}
+            >
+              {" "}
+              {topic}{" "}
+            </p>
           </CardTitle>
           <CardDescription>
             <div className="flex items-center justify-between mt-5">
-              <p
-                className={`text-xl font-bold ${
-                  color ? `text-${color}-400` : "text-blue-400"
-                } `}
-              >
-                {" "}
-                {topic}{" "}
-              </p>
               <p>
                 <span
                   className={`text-2xl md:text-3xl font-bold drop-shadow-md  ${
@@ -83,7 +82,7 @@ const DashTopic = ({
                   }`}
                 >
                   {/* $ {amount} */}
-                  {dollar} <CountUp end={amount} duration={1} />
+                  {dollar} <CountUp end={amount} duration={3} />
                 </span>
                 <span className=" text-sm md:text-base font-medium drop-shadow-sm">
                   / {hope}

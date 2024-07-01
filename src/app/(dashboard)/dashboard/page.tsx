@@ -1,9 +1,5 @@
-import DonutChart from "@/components/Chart/DonutChart";
 import LineChart from "@/components/Chart/LineChart";
-import PieChart from "@/components/Chart/PieChart";
 import DashTopic from "@/components/DashBoardCompnents/DashTopic";
-import OrderCard from "@/components/DashBoardCompnents/OrderCard";
-import OrderTable from "@/components/DashBoardCompnents/OrderTable";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { RiAdvertisementLine, RiLuggageCartLine } from "react-icons/ri";
 const Dashboard = () => {
@@ -50,7 +46,7 @@ const Dashboard = () => {
       <section>
         {/* Top section start here  */}
         <div className="">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
             {data.map((item) => (
               <DashTopic
                 key={item.id}
@@ -66,8 +62,20 @@ const Dashboard = () => {
                 ratePoint={item.ratePoint}
               />
             ))}
-            <div className=" xl:hidden">
-              <OrderCard active={true} />
+            <div>
+              <DashTopic
+                amount={3456}
+                color={"sky"}
+                icon={<RiLuggageCartLine />}
+                hope={923746}
+                rate={"20.85%"}
+                key={1}
+                dollar=""
+                rateName="Abandoned Order"
+                name="Orders"
+                topic="Pending Order"
+                ratePoint="neg"
+              />
             </div>
           </div>
           <div className="sm:hidden mt-4">
@@ -88,7 +96,7 @@ const Dashboard = () => {
         </div>
         {/* Top section end  here  */}
       </section>
-      <section className="my-6  flex flex-col md:flex-row  items-start gap-5">
+      {/* <section className="my-6  flex flex-col md:flex-row  items-start gap-5">
         <div className="flex-1 space-y-5">
           <PieChart />
           <DonutChart />
@@ -97,25 +105,12 @@ const Dashboard = () => {
         <div className=" hidden xl:block flex-1 space-y-5">
           <OrderCard active={true} />
           <OrderCard active={true} />
-          <DashTopic
-            amount={3456}
-            color={"sky"}
-            icon={<RiLuggageCartLine />}
-            hope={923746}
-            rate={"20.85%"}
-            key={1}
-            dollar=""
-            rateName="Abandoned Order"
-            name="Orders"
-            topic="Pending Order"
-            ratePoint="neg"
-          />
         </div>
         <div className="flex-1">
           <OrderTable />
         </div>
-      </section>
-      <section className="flex flex-col md:flex-row  items-start gap-5">
+      </section> */}
+      <section className="mt-5">
         <div className="flex-1">
           <LineChart />
         </div>
