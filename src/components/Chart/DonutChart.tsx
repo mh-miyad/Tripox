@@ -12,7 +12,7 @@ const DonutChart = () => {
   const options = {
     chart: {
       width: "100%",
-      type: "pie",
+      type: "donut",
       height: "100%",
       animations: {
         enabled: true,
@@ -60,7 +60,7 @@ const DonutChart = () => {
 
   return (
     <div>
-      <div className="border rounded-md shadow-lg bg-white h-full p-4 max-w-lg max-h-[450px] dark:bg-slate-950 ">
+      <div className="border rounded-md shadow-lg overflow-hidden bg-red-500  h-full p-4 w-full max-h-[450px] dark:bg-slate-950 ">
         {/* <Pie data={data} options={options} /> */}
         <div className="flex items-center justify-between gap-5 mb-5  ">
           <h2 className="text-2xl font-medium  tracking-wide capitalize">
@@ -81,13 +81,13 @@ const DonutChart = () => {
           </div>
         </div>
 
-        <div className="w-full">
+        <div className="w-full ">
           <Chart
             options={options}
             series={series}
             key={"pieChart"}
-            type="pie"
-            width={"100%"}
+            type="donut"
+            width={400}
             height={350}
           />
         </div>

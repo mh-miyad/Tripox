@@ -50,7 +50,7 @@ const Dashboard = () => {
       <section>
         {/* Top section start here  */}
         <div className="">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
             {data.map((item) => (
               <DashTopic
                 key={item.id}
@@ -89,7 +89,7 @@ const Dashboard = () => {
         {/* Top section end  here  */}
       </section>
       <section className="my-6  flex flex-col md:flex-row  items-start gap-5">
-        <div className="flex-1">
+        <div className="flex-1 space-y-5">
           <PieChart />
           <DonutChart />
         </div>
