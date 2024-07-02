@@ -1,5 +1,8 @@
+import ProductCarousel from "@/components/CarouselProduct/ProductCarousel";
+import ProductTittle from "@/components/CarouselProduct/productTitle";
 import LineChart from "@/components/Chart/LineChart";
 import DashTopic from "@/components/DashBoardCompnents/DashTopic";
+import OrderTable from "@/components/DashBoardCompnents/OrderTable";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { RiAdvertisementLine, RiLuggageCartLine } from "react-icons/ri";
 const Dashboard = () => {
@@ -45,40 +48,24 @@ const Dashboard = () => {
     <div>
       <section>
         {/* Top section start here  */}
-        <div className="">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
-            {data.map((item) => (
-              <DashTopic
-                key={item.id}
-                amount={item.amount}
-                color={item.color}
-                icon={item.icon}
-                hope={item.hope}
-                rate={item.rate}
-                name={item.name}
-                dollar="$"
-                rateName={item.rateName}
-                topic={item.topic}
-                ratePoint={item.ratePoint}
-              />
-            ))}
-            <div>
-              <DashTopic
-                amount={3456}
-                color={"sky"}
-                icon={<RiLuggageCartLine />}
-                hope={923746}
-                rate={"20.85%"}
-                key={1}
-                dollar=""
-                rateName="Abandoned Order"
-                name="Orders"
-                topic="Pending Order"
-                ratePoint="neg"
-              />
-            </div>
-          </div>
-          <div className="sm:hidden mt-4">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4 gap-4">
+          {data.map((item) => (
+            <DashTopic
+              key={item.id}
+              amount={item.amount}
+              color={item.color}
+              icon={item.icon}
+              hope={item.hope}
+              rate={item.rate}
+              name={item.name}
+              dollar="$"
+              rateName={item.rateName}
+              topic={item.topic}
+              ratePoint={item.ratePoint}
+            />
+          ))}
+          <div>
             <DashTopic
               amount={3456}
               color={"sky"}
@@ -94,6 +81,22 @@ const Dashboard = () => {
             />
           </div>
         </div>
+        <div className="sm:hidden mt-4">
+          <DashTopic
+            amount={3456}
+            color={"sky"}
+            icon={<RiLuggageCartLine />}
+            hope={923746}
+            rate={"20.85%"}
+            key={1}
+            dollar=""
+            rateName="Abandoned Order"
+            name="Orders"
+            topic="Pending Order"
+            ratePoint="neg"
+          />
+        </div>
+
         {/* Top section end  here  */}
       </section>
       {/* <section className="my-6  flex flex-col md:flex-row  items-start gap-5">
@@ -102,19 +105,25 @@ const Dashboard = () => {
           <DonutChart />
         </div>
 
-        <div className=" hidden xl:block flex-1 space-y-5">
-          <OrderCard active={true} />
-          <OrderCard active={true} />
-        </div>
+       
         <div className="flex-1">
-          <OrderTable />
+         
         </div>
       </section> */}
       <section className="mt-5">
-        <div className="flex-1">
-          <LineChart />
+        <div className="flex flex-col lg:flex-row  ">
+          <div className="flex-1">
+            <LineChart />
+          </div>
+          <div className="">
+            <ProductCarousel />
+            <ProductTittle />
+          </div>
         </div>
       </section>
+      <div>
+        <OrderTable />
+      </div>
     </div>
   );
 };

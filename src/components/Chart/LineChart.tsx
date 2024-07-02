@@ -3,7 +3,7 @@ import { ApexOptions } from "apexcharts";
 import dayjs from "dayjs";
 import Chart from "react-apexcharts";
 
-const data: ApexOptions = {
+export const data: ApexOptions = {
   series: [
     {
       name: "sales",
@@ -24,24 +24,7 @@ const data: ApexOptions = {
     type: "bar",
     height: "100%",
   },
-  // responsive: [
-  //   {
-  //     breakpoint: 480,
-  //     options: {
-  //       charts: {
-  //         width: 500,
-  //       },
-  //     },
-  //   },
-  //   {
-  //     breakpoint: 680,
-  //     options: {
-  //       charts: {
-  //         width: 700,
-  //       },
-  //     },
-  //   },
-  // ],
+
   plotOptions: {
     bar: {
       borderRadius: 10,
@@ -79,8 +62,8 @@ const data: ApexOptions = {
 };
 
 const LineChart = () => (
-  <div className="w-full xl:max-w-[65rem] border rounded-md shadow-lg bg-white p-4 max-h-[400px] dark:bg-slate-950">
-    <Chart options={data} series={data.series} type="bar" height={380} />
+  <div className="w-full xl:max-w-[65rem] border rounded-md shadow-lg bg-white p-4 max-h-[600px] dark:bg-slate-950">
+    <Chart options={data} series={data.series} type="bar" height={440} />
   </div>
 );
 
