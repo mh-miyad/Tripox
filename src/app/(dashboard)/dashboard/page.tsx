@@ -119,7 +119,7 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
-      <div>
+      <div className="mt-10">
         <OrderTable />
       </div>
     </>
