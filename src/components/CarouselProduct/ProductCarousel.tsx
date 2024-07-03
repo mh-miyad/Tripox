@@ -15,8 +15,8 @@ import img5 from "../../Assets/img-5.png";
 const ProductCarousel = () => {
   const carouselData = [img1, img2, img3, img4, img5];
   return (
-    <div className=" min-h-80 max-h-80">
-      <h2 className="text-2xl font-bold py-3 px-5 bg-gradient-to-br from-indigo-500 to-pink-500 text-transparent bg-clip-text ">
+    <div className=" min-h-80 max-h-[550px]  p-5">
+      <h2 className="text-3xl font-bold mb-5 px-5  bg-gradient-to-r from-fuchsia-600 to-purple-600  text-transparent bg-clip-text ">
         Trending Now{" "}
       </h2>
       <Carousel
@@ -30,14 +30,19 @@ const ProductCarousel = () => {
         <CarouselContent>
           {carouselData.map((image, index) => (
             <CarouselItem key={index}>
-              <div className="min-h-52 h-full  max-h-80 rounded-md  flex justify-center">
-                <Image
-                  src={image}
-                  alt="image"
-                  priority
-                  quality={100}
-                  className="w-full min-h-52 max-h-80 h-full object-cover rounded-md"
-                />
+              <div>
+                <div className="min-h-80 h-full  max-h-80 rounded-md  flex justify-center">
+                  <Image
+                    src={image}
+                    alt="image"
+                    priority
+                    quality={100}
+                    className="w-full min-h-80 max-h-80 h-full object-cover rounded-md"
+                  />
+                </div>
+                <div className="p-1 text-center">
+                  <h2 className="text-2xl pb-3">Adidass {index + 1} </h2>
+                </div>
               </div>
             </CarouselItem>
           ))}

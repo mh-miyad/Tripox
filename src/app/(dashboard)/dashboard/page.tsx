@@ -1,5 +1,4 @@
 import ProductCarousel from "@/components/CarouselProduct/ProductCarousel";
-import ProductTittle from "@/components/CarouselProduct/productTitle";
 import LineChart from "@/components/Chart/LineChart";
 import DashTopic from "@/components/DashBoardCompnents/DashTopic";
 import OrderTable from "@/components/DashBoardCompnents/OrderTable";
@@ -45,7 +44,7 @@ const Dashboard = () => {
     },
   ];
   return (
-    <div>
+    <>
       <section>
         {/* Top section start here  */}
 
@@ -111,20 +110,19 @@ const Dashboard = () => {
         </div>
       </section> */}
       <section className="mt-5">
-        <div className="flex flex-col lg:flex-row  ">
+        <div className="flex flex-col lg:flex-row gap-5 ">
           <div className="flex-1">
             <LineChart />
           </div>
-          <div className="">
+          <div className="bg-white border shadow-md rounded-md dark:bg-slate-950 ">
             <ProductCarousel />
-            <ProductTittle />
           </div>
         </div>
       </section>
       <div>
         <OrderTable />
       </div>
-    </div>
+    </>
   );
 };
 
